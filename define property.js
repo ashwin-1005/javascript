@@ -10,4 +10,4 @@ object1.property1 = 77;
 
 console.log(object1.property1);
 // Expected output: 42
-//Object.defineProperty(obj, prop, descriptor)
+// syntax -->  Object.defineProperty(obj, prop, descriptor)
