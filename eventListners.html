@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listener - JavaScript</title>
+</head>
+<body>
+    <div class="static">Static</div>
+    <button class="add" onclick="return false;">Add</button>
+    <script type="text/javascript">
+        document.querySelector( '.add' ).addEventListener( 'click', addElement );
+
+        function addElement() {
+            var static = document.querySelector( '.static' );         
+            var dynamic = document.createElement( 'div' );
+                dynamic.classList.add( 'dynamic' );
+                dynamic.innerText = 'Dynamic';
+
+            static.insertAdjacentElement( 'afterend', dynamic );
+            setListener( dynamic );
+        }   
+
+        function setListener( el ) {
+            // Dynamic elements event listener
+            el.addEventListener( 'click', function() {
+                this.remove();
+            } );
+        }
+    </script>
+</body>
+</html> 
